@@ -8,7 +8,6 @@ async function main() {
     const auction = await Auction.deploy();
 
     await auction.deployed();
-    console.log(auction)
     console.log("Auction deployed to:", auction.address);
 }
 
