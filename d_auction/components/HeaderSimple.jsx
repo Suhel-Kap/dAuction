@@ -152,20 +152,11 @@ export function HeaderSimple() {
         <Header height={100} p="md">
             <Group position="apart" p={"md"} sx={{ height: "100%" }}>
                 <Group>
-                    <Image
-                        src="/logo.webp"
-                        width={50}
-                        height={50}
-                        alt="logo"
-                        radius={"xl"}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => router.push("/")}
-                    />
                     <Title
                         onClick={() => router.push("/")}
                         className={classes.title}
                     >
-                        The Crypto Studio
+                        Decentralised Auction Platform
                     </Title>
                 </Group>
                 <Group className={classes.hiddenMobile}>
