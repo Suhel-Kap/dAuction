@@ -1,4 +1,4 @@
-import abi from "./contractAddress.json";
+import abi from "./abi.json";
 import contractAddress from "./contractAddress.json";
 import tables from "./tables.json"
 

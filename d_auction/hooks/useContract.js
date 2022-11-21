@@ -12,105 +12,41 @@ export const useContract = () => {
         signer
     );
 
-    const getCurrentTokenId = async () => {
-        return await contract.totalSupply();
-    };
-
-    const mint = async ({
-        name,
-        image,
-        animation,
-        audioCid,
-        description,
-        spaceName,
-    }) => {
-        const tx = await contract.mint_your_Art(
-            name,
-            image,
-            animation,
-            audioCid,
-            description,
-            spaceName,
-            { value: ethers.utils.parseEther("0.01") }
-        );
+    const listProduct = async (name, description, image, basePrice, startDate, endDate) => {
+        const price = ethers.utils.parseEther(basePrice)
+        const tx = await contract.list_product(name, description, image, price, startDate, endDate);
         return await tx.wait();
-    };
+    }
 
-    const changeAudio = async (tokenId, audioCid) => {
-        const tx = await contract.changeNFTaudio(tokenId, audioCid);
-        return await tx.wait();
-    };
+    const bid = async (tokenId, value, time) => {
+        const tx = await contract.bid(tokenId, time, { value: ethers.utils.parseEther(value) })
+        return await tx.wait()
+    }
 
-    const spaceExists = async (spaceName) => {
-        return await contract.spaceExists(spaceName);
-    };
+    const purchase = async (tokenId, time) => {
+        const tx = await contract.bid(tokenId, time)
+        return await tx.wait()
+    }
 
-    const mintSpace = async (spaceName, groupId, imageCid) => {
-        const tx = await contract.SocialSpaceCreation(
-            spaceName,
-            groupId,
-            imageCid
-        );
-        return await tx.wait();
-    };
+    const withdraw = async () => {
+        const tx = await contract.withdraw()
+        return await tx.wait()
+    }
 
-    const mintAudioNft = async ({
-        name,
-        image,
-        audioCid,
-        description,
-        spaceName,
-    }) => {
-        const tx = await contract.mint_your_Art(
-            name,
-            image,
-            audioCid,
-            audioCid,
-            description,
-            spaceName,
-            { value: ethers.utils.parseEther("0.01") }
-        );
-        return await tx.wait();
-    };
+    const getBalance = async () => {
+        return await contract.getBalance(address)
+    }
 
-    const mintImageNft = async ({ name, image, description, spaceName }) => {
-        const tx = await contract.mint_your_Art(
-            name,
-            image,
-            image,
-            "",
-            description,
-            spaceName,
-            { value: ethers.utils.parseEther("0.01") }
-        );
-        return await tx.wait();
-    };
+    const getHighestBidder = async (tokenId) => {
+        return await contract.getHighestBidder(tokenId)
+    }
 
-    const addAttribute = async ({ tokenId, traitType, value }) => {
-        console.log("addAttribute", tokenId, traitType, value);
-        const tx = await contract.addAttribute(tokenId, traitType, value);
-        return await tx.wait();
-    };
+    const getProductOwner = async (tokenId) => {
+        return await contract.getProductOwner(tokenId)
+    }
 
-    const updateAttribute = async ({ tokenId, traitType, value }) => {
-        const tx = await contract.updateAttribute(
-            tokenId,
-            traitType,
-            value,
-            false
-        );
-        return await tx.wait();
-    };
 
     return {
-        getCurrentTokenId,
-        mint,
-        changeAudio,
-        spaceExists,
-        mintSpace,
-        mintAudioNft,
-        mintImageNft,
-        updateAttribute,
-        addAttribute,
+        listProduct, bid, purchase, withdraw, getBalance, getHighestBidder, getProductOwner
     };
 };
