@@ -1,0 +1,5 @@
+{
+  "historyTable": "https://testnet.tableland.network/query?s=SELECT%20*%20FROM%20product_history_80001_4070",
+  "productListTable": "https://testnet.tableland.network/query?s=SELECT%20*%20FROM%20product_list_80001_4069",
+  "productPurchaseTable": "https://testnet.tableland.network/query?s=SELECT%20*%20FROM%20product_purchase_80001_4071"
+}

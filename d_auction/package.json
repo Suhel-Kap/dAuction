@@ -1,0 +1,30 @@
+{
+  "name": "d_auction",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@mantine/core": "^5.6.4",
+    "@mantine/dates": "^5.8.2",
+    "@mantine/hooks": "^5.6.4",
+    "@mantine/next": "^5.6.4",
+    "@mantine/notifications": "^5.6.4",
+    "@rainbow-me/rainbowkit": "^0.7.4",
+    "@tabler/icons": "^1.109.0",
+    "dayjs": "^1.11.6",
+    "ethereum-blockies-base64": "^1.0.2",
+    "ethers": "^5.7.2",
+    "next": "13.0.4",
+    "nft.storage": "^7.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "wagmi": "^0.7.10"
+  }
+}
