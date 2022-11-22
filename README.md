@@ -6,6 +6,6 @@ The contract can be viewed on [Mumbai Polygonscan](https://mumbai.polygonscan.co
 
 A few screenshots of our decentralised application:
 
-![](./images/home page.png)
+![](./images/home-page.png)
 ![](./images/list-product.png)
 ![](./images/withdraw.png)
