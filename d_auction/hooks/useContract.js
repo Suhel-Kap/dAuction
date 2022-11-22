@@ -1,6 +1,6 @@
-import { ethers } from "ethers";
-import { abi, contractAddress } from "../constants";
-import { useAccount, useSigner } from "wagmi";
+import {ethers} from "ethers";
+import {abi, contractAddress} from "../constants";
+import {useAccount, useSigner} from "wagmi";
 
 export const useContract = () => {
     const { data: signer, isError, isLoading } = useSigner();

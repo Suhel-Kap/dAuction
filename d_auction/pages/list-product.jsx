@@ -1,17 +1,6 @@
-import {
-  Button,
-  Container,
-  FileInput,
-  Textarea,
-  TextInput,
-  Text,
-  Loader,
-  Group,
-  Title,
-  NumberInput,
-} from "@mantine/core";
+import {Button, Container, FileInput, Textarea, TextInput, Loader, Group, Title, NumberInput,} from "@mantine/core";
 import { DateRangePicker } from "@mantine/dates";
-import { IconQuestionMark, IconUpload } from "@tabler/icons";
+import { IconUpload } from "@tabler/icons";
 import Head from "next/head";
 import { Layout } from "../components/Layout";
 import { useState } from "react";
